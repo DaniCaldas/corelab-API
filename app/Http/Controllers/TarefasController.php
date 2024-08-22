@@ -9,15 +9,13 @@ use Illuminate\Http\Request;
 class TarefasController extends Controller
 {
     public function index(){
-        return Tarefas::all();
+        return Tarefas::orderBy('favorito', 'desc')->get();
     }
 
     public function store(Request $req){
         Tarefas::create([
             "titulo" => $req->titulo,
             "status" => $req->status,
-            "favorito" => $req->favorito,
-            "cor" => $req->cor
         ]);
         return response('OK',200);
     }
@@ -28,13 +26,13 @@ class TarefasController extends Controller
         if($req->titulo != null){
             $tarefa-> titulo = $req->titulo;
         }
-        else if($req->status != null){
+        if($req->status != null){
             $tarefa-> status = $req->status;
         }
-        else if($req->favorito != null){
+        if($req->favorito != null){
             $tarefa->favorito = $req->favorito;
         }
-        else if($req->cor != null){
+        if($req->cor != null){
             $tarefa->cor = $req->cor;
         }
 
