@@ -17,7 +17,7 @@ para utilizar o projeto sera preciso utilizar um banco de dados local, recomenda
 ## O banco de dados esta utilizando as configuração padrão:
 - user: root
 - senha:
-- database: list
+- database: laravel
 - tabela: tarefas
 
 ## Estrutura da tabela
