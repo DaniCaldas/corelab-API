@@ -17,3 +17,9 @@
 - tabela: tarefas
 
 ## Estrutura da tabela
+<code>id integer primary key,
+titulo varchar(255),
+status varchar(255) default("Pendente"),
+favorito integer default(1), # 1 é para não favoritado e 2 para favoritado
+cor varchar(255) default("#FFFFF")
+</code>
