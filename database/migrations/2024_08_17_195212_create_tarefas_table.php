@@ -15,9 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('titulo');
             $table->string('status');
-            $table->timestamps();
-            $table->integer("favorito");
-            $table->string("cor");
+            $table->integer("favorito")->default(1);
+            $table->string("cor")->default("#FFFFF");
         });
     }
 
